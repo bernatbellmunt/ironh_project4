@@ -27,18 +27,27 @@ def sql ():
 def lines_from_characters (name):
     return jsonify(esecuele.get_everything_from_character(name))
 
-#all lines of a character
+#all lines of a character-> we pass sentiment
 @app.route("/sa/<name>/", )
 def sa_from_character (name):
     everything = esecuele.get_just_dialogue(name)
     #return jsonify(everything)
-    return jsonify([sia.polarity_scores(i["line"])["compound"] for i in everything])
+    list_sentiment = [sia.polarity_scores(i["line"])["compound"] for i in everything]
+    return jsonify(list_sentiment)
+
+#avg sentiment all lines of a character-
+@app.route("/avg_sa/<name>/", )
+def avg_sa_from_character (name):
+    everything = esecuele.get_just_dialogue(name)
+    #return jsonify(everything)
+    list_sentiment = [sia.polarity_scores(i["line"])["compound"] for i in everything]
+    return jsonify(sum(list_sentiment)/len(list_sentiment))
 
 #avg sentiment of all characters lines of a character
-@app.route("/sa/all_characters", )
+"""@app.route("/sa/all_characters", )
 def all_sa ():
     everything = esecuele.get_lines_from_all()
-    for 
+    for """
 
 
 ####### POST
@@ -46,12 +55,14 @@ def all_sa ():
 def try_post ():
     # Decoding params
     my_params = request.args
-    scene = my_params["scene"]
+    season_no = my_params["season_no"]
+    episode_no = my_params["episode_no"]
+    episode_name = my_params["episode_name"]
     character_name = my_params["character_name"]
-    dialogue = my_params["dialogue"]
+    line = my_params["line"]
 
     # Passing to my function: do the inserr
-    esecuele.insert_one_row(scene, character_name, dialogue)
+    esecuele.insert_one_row(season_no, episode_no, episode_name, character_name, line)
     return f"Query succesfully inserted"
 
 
