@@ -75,6 +75,7 @@ Additionally to this I have analyzed the most used words for the main characters
 ![Alt text](images/Morty_wordcloud.png)
 
 **Summer Wordcloud**
+
 ![Alt text](images/Summer_wordcloud.png)
 
 **Beth Wordcloud**
