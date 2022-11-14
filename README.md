@@ -63,3 +63,25 @@ headers = {"season_no":"-", "episode_no":"-", "episode_name":"-", "character_nam
 request.post("http://localhost:9000/post", params= headers)
 ```
 The headers contains is a dictionary where keys are the name of the columns from my SQL table, and the value the content that will be inputed into the database in a new row.
+
+Additionally to this I have analyzed the most used words for the main characters. These are the word clouds for Rick, Morty, Summer, Beth and Jerry.
+
+**Rick Wordcloud**
+
+![Alt text](images/Rick_Wordcloud.png)
+
+**Morty Wordcloud**
+
+![Alt text](images/Morty_wordcloud.png)
+
+**Summer Wordcloud**
+![Alt text](images/Summer_wordcloud.png)
+
+**Beth Wordcloud**
+
+![Alt text](images/beth_wordcloud.png)
+
+**Jerry Wordcloud**
+
+![Alt text](images/jerry_wordcloud.png)
+
