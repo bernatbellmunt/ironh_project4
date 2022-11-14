@@ -1,14 +1,15 @@
 # Project 4: Rick and Morty API
 
 
-![Alt text](images/giphy.gif)
+<img src="https://github.com/bernatbellmunt/ironh_project4/blob/main/images/giphy.gif?raw=true" alt="flower">  
 
 The aim of this project is to create an API connected to a SQL Database. The database I have used get information from a CSV file that contains the details of the lines of several Rick and Morty episodes. 
 
 The CSV file has been downloaded from Kaggle: https://www.kaggle.com/datasets/andradaolteanu/rickmorty-scripts
 
 The file once uploaded into SQL and built the connection has the following structure:
-![Alt text](images/Screenshot%202022-11-14%20at%2011.01.02.png)
+<img src="https://github.com/bernatbellmunt/ironh_project4/blob/main/images/Screenshot%202022-11-14%20at%2011.01.02.png?raw=true" alt="flower">  
+
 
 I have worked using the Visual Studio Code in the following files in order to build this new API (currently not in a public server):
 
@@ -68,21 +69,22 @@ Additionally to this I have analyzed the most used words for the main characters
 
 **Rick Wordcloud**
 
-![Alt text](images/Rick_Wordcloud.png)
+<img src="https://github.com/bernatbellmunt/ironh_project4/blob/main/images/Rick_Wordcloud.png?raw=true" alt="flower">  
+
 
 **Morty Wordcloud**
 
-![Alt text](images/Morty_wordcloud.png)
+<img src="https://github.com/bernatbellmunt/ironh_project4/blob/main/images/Morty_wordcloud.png?raw=true" alt="flower">  
 
 **Summer Wordcloud**
 
-![Alt text](images/Summer_wordcloud.png)
+<img src="https://github.com/bernatbellmunt/ironh_project4/blob/main/images/Summer_wordcloud.png?raw=true" alt="flower">  
 
 **Beth Wordcloud**
 
-![Alt text](images/beth_wordcloud.png)
+<img src="https://github.com/bernatbellmunt/ironh_project4/blob/main/images/beth_wordcloud.png?raw=true" alt="flower">  
 
 **Jerry Wordcloud**
 
-![Alt text](images/jerry_wordcloud.png)
+<img src="https://github.com/bernatbellmunt/ironh_project4/blob/main/images/jerry_wordcloud.png?raw=true" alt="flower">  
 
