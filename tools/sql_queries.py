@@ -48,6 +48,13 @@ def get_lines_from_char ():
             lines_dict[char].append(diu)
     return lines_dict
 
+def get_episodes ():
+    query ="""select distinct episode_name
+    from all_info;"""
+    df = pd.read_sql_query(query, engine)
+    llista = df.to_dict(orient="records")
+    return llista
+
 '''def return_episodes_and_seasons(): -- # NO FUNCIONA COM VULL
     query = """SELECT season_no, episode_no, DISTINCT(episode_name)
     from all_info
@@ -57,7 +64,7 @@ def get_lines_from_char ():
 
 def insert_one_row (season_no, episode_no, episode_name, character_name, line):
     query = f"""INSERT INTO all_info
-     (scene, character_name, dialogue) 
+     (season_no, episode_no, episode_name, character_name, line) 
         VALUES ({season_no}, {episode_no},'{episode_name}', '{character_name}', '{line}');
     """
     engine.execute(query)

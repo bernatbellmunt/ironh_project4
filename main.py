@@ -47,7 +47,7 @@ def episodes ():
 def lines_from_characters (name):
     return jsonify(esecuele.get_everything_from_character(name))
 
-#sentiment of each line - OK
+#sentiment of each line - OK --> potser podria passarho a un grafic per veure quina es la seva evolució?
 @app.route("/sa/<name>/", )
 def sa_from_character (name):
     everything = esecuele.get_just_dialogue(name)
@@ -74,6 +74,23 @@ def all_sa ():
         new_d[k]=avg_sent
     return new_d
 
+#returns all episodes
+@app.route("/episodes", )
+def all_episodes ():
+    everything = esecuele.get_episodes()
+    return jsonify(everything)
+
+@app.route("/count_lines", )
+def countlines ():
+    everything = esecuele.get_lines_from_char()
+    newd = {}
+    sorted={}
+    for key in everything:
+        newd[key]=len(everything[key])
+    
+    return jsonify(newd)
+
+
 #word cloud per character - does not work - processing a lot and 
 """@app.route("/wordcloud/<name>", )
 def word_cloud_charac (name):
@@ -92,8 +109,8 @@ def word_cloud_charac (name):
     return wordcloud"""
 
 ####### POST -- DOES NOT WORK - METHOD NOT ALLOWED
-@app.route("/insertrow", methods=["POST"])
-def try_post ():
+@app.route("/post", methods=["POST"])
+def insert_row ():
     # Decoding params
     my_params = request.args
     season_no = my_params["season_no"]
